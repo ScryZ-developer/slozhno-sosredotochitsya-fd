@@ -1,5 +1,55 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--page-bg-color);
+  font-family: "IBM Plex mono", sans-serif;
+}
+
+.header {
+  min-block-size: 100vh;
+  background: url(../images/cover-image-dark.png) no-repeat center / cover ;
+}
+
+.angle::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: '';
+  margin: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+}
+
+.lamp__container {
+  display: flex;
+  padding: 10px;
+  justify-self: end;
+  margin-right: 9px;
+  min-inline-size: 52px;
+  min-block-size: 26px;
+}
+
+.decoration__element-text {
+  display: flex;
+  align-self: center;
+  inline-size: 33px;
+  block-size: 26px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-size: var(--font-size);
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0;
+}
+
+.decoration__element-circle {
+  content: '';
+  display: flex;
+  margin: 8px 0 9px 10px;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 100%;
+  background-color: var(--accent-color);
+  filter: drop-shadow(0 0 4px var(--accent-color));
 }
