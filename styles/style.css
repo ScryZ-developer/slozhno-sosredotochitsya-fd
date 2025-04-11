@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 .page {
   background-color: var(--page-bg-color);
-  font-family: "IBM Plex mono", sans-serif;
+  font-family: var(--main-font);
 }
 
 .header {
@@ -38,7 +38,7 @@
   color: var(--accent-color);
   text-transform: uppercase;
   font-size: var(--font-size);
-  font-weight: 400;
+  font-weight: var(--font-weight);
   line-height: 25px;
   letter-spacing: 0;
 }
@@ -52,4 +52,60 @@
   border-radius: 100%;
   background-color: var(--accent-color);
   filter: drop-shadow(0 0 4px var(--accent-color));
+}
+
+.header__theme-menu {
+  display: grid;
+  margin: 28px 0 65px 0;
+  inline-size: 70px;
+  block-size: 98px;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+  display: flex;
+
+}
+
+.header__theme-menu-button {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  inline-size: 44px;
+  block-size: 23px;
+  border: none;
+  background-color: transparent;
+  color: var(--accent-color);
+  font-size: var(--font-size);
+  text-transform: lowercase;
+}
+
+.header__title {
+  display: grid;
+  inline-size: 355px;
+  block-size: 192px;
+  font-size: var(--big-font-size);
+  font-weight: var(--big-font-weight);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: 83%;
+  margin: 0 10px;
+}
+
+.header__text {
+  display: grid;
+  margin: 56px 10px 66px 10px;
+  inline-size: 355px;
+  block-size: 117px;
+  font-size: var(--font-size);
+  font-weight: var(--big-font-weight);
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  line-height: 23.4px;
 }
