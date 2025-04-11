@@ -1,0 +1,1 @@
+Проект №3 в Яндекс Практикум под названием "Сложно сосредоточиться". https://github.com/ScryZ-developer/slozhno-sosredotochitsya-fd.git
