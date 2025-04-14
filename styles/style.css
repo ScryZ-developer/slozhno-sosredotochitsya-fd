@@ -2,11 +2,18 @@
 .page {
   background-color: var(--page-bg-color);
   font-family: var(--main-font);
+  background-image: var(--bg-image);
+  font-size: var(--font-size);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
   min-block-size: 100vh;
-  background: url(../images/cover-image-dark.png) no-repeat center / cover ;
 }
 
 .angle::after {
@@ -31,13 +38,10 @@
 }
 
 .decoration__element-text {
-  display: flex;
-  align-self: center;
   inline-size: 33px;
   block-size: 26px;
   color: var(--accent-color);
   text-transform: uppercase;
-  font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: 25px;
   letter-spacing: 0;
@@ -54,43 +58,46 @@
   filter: drop-shadow(0 0 4px var(--accent-color));
 }
 
-.header__theme-menu {
-  display: grid;
-  margin: 28px 0 65px 0;
-  inline-size: 70px;
-  block-size: 98px;
-  justify-self: end;
-}
-
 .header__theme-menu-list {
-  display: grid;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.header__theme-menu-item {
   display: flex;
-
+  justify-content: center;
+  gap: 10px;
 }
 
 .header__theme-menu-button {
   display: grid;
-  justify-content: center;
-  align-items: center;
-  inline-size: 44px;
-  block-size: 23px;
+  text-align: center;
+  padding: 0 13px;
   border: none;
   background-color: transparent;
   color: var(--accent-color);
-  font-size: var(--font-size);
   text-transform: lowercase;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--btn-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--btn-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(255, 0, 112, 0.40);
+  cursor: pointer;
 }
 
 .header__title {
   display: grid;
   inline-size: 355px;
   block-size: 192px;
-  font-size: var(--big-font-size);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: var(--big-font-weight);
   color: var(--title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -103,9 +110,28 @@
   margin: 56px 10px 66px 10px;
   inline-size: 355px;
   block-size: 117px;
-  font-size: var(--font-size);
   font-weight: var(--big-font-weight);
   background-color: var(--accent-color);
   color: var(--text-color);
-  line-height: 23.4px;
+  line-height: var(--line-height);
 }
+
+.title__decor {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+.section__one { 
+  display: flex;
+  margin-inline: 10px;
+  padding-block-start: 40px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section__one-title {
+  color: var(--accent-color);
+  font-weight: var(--big-font-weight);
+  line-height: var(--line-height);
+}
+

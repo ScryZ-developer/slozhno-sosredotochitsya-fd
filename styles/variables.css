@@ -8,10 +8,11 @@
   --main-text-color: #f1b2ce;
   --title-color: #db00ff;
   --accent-color: #FF0070;
-  --page-bg-color: #000028;
   --text-color: #000028;
   --font-size: 18px;
   --big-font-size: 116px;
   --font-weight: 400;
   --big-font-weight: 700;
+  --bg-image: url(../images/cover-image-dark.png);
+  --line-height: 23.4px;
 }
