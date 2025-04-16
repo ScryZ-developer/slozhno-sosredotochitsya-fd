@@ -7,3 +7,222 @@
   background-size: cover;
   background-attachment: fixed;
 }
+
+/* Стили для заголовка */
+.header {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  min-block-size: 100vh;
+  padding: 10px;
+}
+
+/* Cтили, реализующие углы */
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  top: 0;
+  right: 0;
+  border-top: 1px var(--accent-color) solid;
+  border-right: 1px var(--accent-color) solid;
+  inline-size: 25px;
+  block-size: 25px;
+  margin: 10px;
+  aspect-ratio: 1 / 1;
+  justify-self: end;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  grid-column: 1/2;
+  grid-row: 3/4;
+  align-self: end;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px var(--accent-color) solid;
+  border-left: 1px var(--accent-color) solid;
+  inline-size: 25px;
+  block-size: 25px;
+  margin: 10px;
+  aspect-ratio: 1 / 1;
+}
+
+/* Стили для REC */
+.decorative__element {
+  position: absolute;
+  display: inline-flex;
+  justify-self: end;
+  color: var(--accent-color);
+}
+
+.decorative__element::before {
+  content: "rec";
+  inline-size: 33px;
+  block-size: 26px;
+  font-size: var(--font-size);
+  align-self: center;
+  text-transform: uppercase;
+}
+
+.decorative__element::after {
+  content: "";
+  margin: 9px;
+  inline-size: 9px;
+  border-radius: 100%;
+  block-size: 9px;
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
+  text-align: center;
+}
+
+/* Стили для меню */
+.header__theme-menu {
+  display: inline;
+  align-self: center;
+  justify-self: end;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 10px;
+  color: var(--accent-color);
+}
+
+.header__theme-menu-button {
+  box-sizing: border-box;
+  border: transparent 1px solid;
+  padding: 1.5px 13px 5px 13px;
+  line-height: 18px;
+  text-transform: lowercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border: var(--accent-color) 1px solid;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: currentColor 1px solid;
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  border: currentColor 1px solid;
+  pointer-events: none;
+}
+
+.header__title {
+  color: var(--title-color);
+  font-size: var(--mobile-font-size);
+  font-weight: var(--big-font-weight);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: 83%;
+}
+
+.header__text {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  justify-self: end;
+  align-self: center;
+}
+
+.title__decor {
+  color: var(--text-color);
+  font-size: var(--font-size);
+  background-color: var(--accent-color);
+  font-weight: var(--big-font-weight);
+  line-height: var(--line-height);
+}
+
+/* Стили для основного контента */
+.main {
+  margin-inline: 10px;
+}
+
+.section {
+  margin-block: clamp(40px, 20px + 5.25vw, 60px) clamp(50px, 21px + 7.7vw, 80px);
+}
+
+.section__title {
+  margin-block-end: 20px;
+  color: var(--accent-color);
+  font-weight: var(--big-font-weight);
+  line-height: var(--line-height);
+  font-size: var(--font-size);
+}
+
+.section__answer-title {
+  line-height: var(--line-height);
+}
+
+.section__answer-text {
+  margin-block: 10px 20px;
+  line-height: var(--line-height);
+  color: var(--main-text-color);
+}
+
+/* Стили для ссылок */
+.section__answer-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.section__answer-link:hover {
+  border-block-end: 1.5px var(--main-text-color) solid;
+  transition-duration: 0.2s;
+}
+
+.section__answer-link:focus {
+  outline: none;
+}
+
+.section__answer-link:focus-visible {
+  outline: currentColor solid 1.2px;
+}
+
+.min-weight {
+  font-weight: var(--font-weight);
+  margin-block-start: 20px;
+}
+
+/* Стили для блока с картинками */
+.section__four {
+  margin-block-start: 50px;
+  margin-block-end: clamp(40px, 20px + 5.25vw, 60px);
+}
+
+.section__four-answer {
+  display: grid;
+  margin-block-start: 10px;
+  gap: 10px;
+}
+
+.section__four-answer-image {
+  object-fit: cover;
+  inline-size: 100%;
+}
+
+/* Стили для подвала */
+.footer {
+  position: relative;
+  display: grid;
+  min-block-size: 100vh;
+  align-items: center;
+}
+
+.footer__title {
+  justify-self: center;
+  color: var(--title-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
+  font-size: var(--mobile-font-size);
+  line-height: 83%;
+}
