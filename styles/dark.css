@@ -11,4 +11,6 @@
   --text-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
   --header-decor: inline-flex;
+  --accent-color-hover: rgb(255, 0, 112, 0.4);
+  --accent-main-color: #FF0070;
 }

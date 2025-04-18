@@ -8,6 +8,8 @@
   --main-text-color: #f1b2ce;
   --title-color: #db00ff;
   --accent-color: #FF0070;
+  --accent-color-hover: rgb(255, 0, 112, 0.4);
+  --accent-main-color: #FF0070;
   --text-color: #000028;
   --font-size: 18px;
   --font-weight: 400;
