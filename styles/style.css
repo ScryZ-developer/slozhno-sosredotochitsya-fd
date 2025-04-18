@@ -11,6 +11,7 @@
 /* Стили для заголовка */
 .header {
   display: grid;
+  min-block-size: 668px;
   grid-template-rows: 1fr auto 1fr;
   padding: clamp(10px, 2.666vw, 20px);
   block-size: 100vh;
@@ -202,22 +203,22 @@
 }
   
 /* Стили для блока с картинками */
-.section__four {
+.section__pictures {
   display: grid;
   margin-block-end: clamp(40px, 20px + 5.25vw, 60px);
 }
 
-.section__four-title {
+.section__pictures-title {
   margin-block-start: 10px;
 }
 
-.section__four-answer {
+.section__pictures-answer {
   display: grid;
   margin-block: clamp(10px, 2.666vw, 20px);
   gap: 10px;
 }
 
-.section__four-answer-image {
+.section__pictures-answer-image {
   object-fit: cover;
   inline-size: 100%;
 }
@@ -227,7 +228,7 @@
   margin-block-start: -10px;
   position: relative;
   display: grid;
-  min-block-size: 100vh;
+  block-size: 100vh;
   align-items: center;
 }
 
@@ -258,7 +259,7 @@
     margin: 20px;
   }
 
-  .section__column {
+  .decorated-section {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-auto-flow: column;
@@ -269,11 +270,11 @@
     margin: 0;
   }
 
-  .section__four-title {
+  .section__pictures-title {
     margin-block-start: -5px;
   }
 
-  .section__four-answer {
+  .section__pictures-answer {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-areas:
@@ -285,7 +286,7 @@
     max-block-size: calc(100vw + 23px);
   } 
 
-  .section__four-answer-image {
+  .section__pictures-answer-image {
     object-fit: cover;
     block-size: 100%;
   }
@@ -333,14 +334,14 @@
     margin-block-start: -20px;
   }
 
-  .section__two-answer {
+  .section__question-answer {
     display: grid;
     margin-block-start: 20px;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
-  .section__three {
+  .section__how {
     margin-block-start: -20px;
   }
 }
