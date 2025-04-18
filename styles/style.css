@@ -52,7 +52,7 @@
 /* Стили для REC */
 .decorative__element {
   position: absolute;
-  display: inline-flex;
+  display: var(--header-decor);
   justify-self: end;
   color: var(--accent-color);
 }
@@ -163,7 +163,7 @@
 }
 
 .what__title {
-  max-width: clamp(236px, 468.5504px + -30.2799vw, 355px);
+  max-inline-size: clamp(236px, 468.5504px + -30.2799vw, 355px);
   margin-block-end: 20px;
 }
 
