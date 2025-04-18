@@ -12,8 +12,8 @@
 .header {
   display: grid;
   grid-template-rows: 1fr auto 1fr;
-  min-block-size: 100vh;
-  padding: 10px;
+  padding: clamp(10px, 2.666vw, 20px);
+  block-size: 100vh;
 }
 
 /* Cтили, реализующие углы */
@@ -71,7 +71,6 @@
   margin: 9px;
   inline-size: 9px;
   border-radius: 100%;
-  block-size: 9px;
   box-shadow: 0px 0px 4px 2px var(--accent-color);
   background-color: var(--accent-color);
   text-align: center;
@@ -129,10 +128,13 @@
 }
 
 .header__text {
+  inline-size: clamp(355px, 50%, 491px);
+  line-height: var(--line-height);
   grid-column: 1 / 2;
   grid-row: 3 / 4;
   justify-self: end;
   align-self: center;
+  margin: 0;
 }
 
 .title__decor {
@@ -145,7 +147,7 @@
 
 /* Стили для основного контента */
 .main {
-  margin-inline: 10px;
+  margin-inline: min(2.666vw, 20px);
 }
 
 .section {
@@ -153,11 +155,16 @@
 }
 
 .section__title {
-  margin-block-end: 20px;
   color: var(--accent-color);
   font-weight: var(--big-font-weight);
   line-height: var(--line-height);
   font-size: var(--font-size);
+  margin-block-end: 20px;
+}
+
+.what__title {
+  max-width: clamp(236px, 468.5504px + -30.2799vw, 355px);
+  margin-block-end: 20px;
 }
 
 .section__answer-title {
@@ -193,16 +200,20 @@
   font-weight: var(--font-weight);
   margin-block-start: 20px;
 }
-
+  
 /* Стили для блока с картинками */
 .section__four {
-  margin-block-start: 50px;
+  display: grid;
   margin-block-end: clamp(40px, 20px + 5.25vw, 60px);
+}
+
+.section__four-title {
+  margin-block-start: 10px;
 }
 
 .section__four-answer {
   display: grid;
-  margin-block-start: 10px;
+  margin-block: clamp(10px, 2.666vw, 20px);
   gap: 10px;
 }
 
@@ -213,6 +224,7 @@
 
 /* Стили для подвала */
 .footer {
+  margin-block-start: -10px;
   position: relative;
   display: grid;
   min-block-size: 100vh;
@@ -225,4 +237,110 @@
   text-shadow: 2px 2px 0 var(--accent-color);
   font-size: var(--mobile-font-size);
   line-height: 83%;
+}
+
+@media (min-width: 768px) {
+  .header__title {
+    position: relative;
+    margin-inline-start: -20px;
+    font-size: var(--desktop-font-size);
+  }
+  
+  .footer__title {
+    font-size: var(--desktop-font-size);
+  }
+
+  .decorated-zone::before {
+    margin: 20px;
+  }
+
+  .decorated-zone::after {
+    margin: 20px;
+  }
+
+  .section__column {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-flow: column;
+    gap: 20px;
+  }
+
+  .section__title {
+    margin: 0;
+  }
+
+  .section__four-title {
+    margin-block-start: -5px;
+  }
+
+  .section__four-answer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas:
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
+    gap: 20px;
+    object-fit: cover;
+    max-block-size: calc(100vw + 23px);
+  } 
+
+  .section__four-answer-image {
+    object-fit: cover;
+    block-size: 100%;
+  }
+
+  .image-sunset {
+    grid-area: sunset;
+  }
+
+  .image-ice-cream {
+    grid-area: ice-cream;
+  }
+
+  .image-tape {
+    grid-area: tape;
+  }
+
+  .image-books {
+    grid-area: books;
+  }
+
+  .image-street {
+    grid-area: street;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    grid-auto-flow: column;
+  }
+
+  .section__column {
+    display: grid;
+    grid-template-columns: 315px auto;
+    gap: 20px;
+    grid-auto-flow: column;
+  }
+
+  .what__title {
+    max-inline-size: 315px;
+    margin-block-start: -20px;
+  }
+
+  .section__two-answer {
+    display: grid;
+    margin-block-start: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .section__three {
+    margin-block-start: -20px;
+  }
 }
