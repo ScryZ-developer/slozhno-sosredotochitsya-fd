@@ -228,7 +228,8 @@
   margin-block-start: -10px;
   position: relative;
   display: grid;
-  block-size: 100vh;
+  min-block-size: 668px;
+  height: 100vh;
   align-items: center;
 }
 

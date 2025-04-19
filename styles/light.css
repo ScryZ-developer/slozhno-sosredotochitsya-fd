@@ -10,6 +10,7 @@
   --accent-color: #ff8dcb;
   --accent-color-hover: rgb(53, 52, 48, 0.4);
   --accent-main-color: #353440;
+  --page-main-color: #fff1f7;
   --text-color: var(--main-text-color);
   --bg-image: url(../images/cover-image-light.png);
   --header-decor: none;
@@ -22,6 +23,7 @@
     --accent-main-color: #353440;
     --accent-color-hover: rgb(53, 52, 48, 0.4);
     --accent-color: #ff8dcb;
+    --page-main-color: #fff1f7;
     --text-color: var(--main-text-color);
     --bg-image: url(../images/cover-image-light.png); 
     --header-decor: none;
